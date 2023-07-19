@@ -472,7 +472,7 @@ class BIDSLayoutIndexer:
                 tag = Tag(bf, all_entities[md_key], md_val, is_metadata=True)
                 self.session.add(tag)
 
-            if len(self.session.new) >= 1000:
+            if len(self.session.new) >= float("inf"):
                 self.session.commit()
 
         self.session.commit()
